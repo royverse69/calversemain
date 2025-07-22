@@ -3,52 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- SEO & Meta Tags -->
+
     <title>Calverse - Advanced AI Fitness & Nutrition Companion</title>
-    <meta name="description" content="Your ultimate fitness and nutrition companion. Track meals, discover healthy recipes, and calculate health metrics with Calverse, powered by AI.">
-    <meta property="og:title" content="Calverse - Advanced AI Fitness & Nutrition Companion">
-    <meta property="og:description" content="Achieve your fitness goals with smart, AI-driven tools for nutrition tracking and meal planning.">
+    <meta name="description" content="Your ultimate fitness and nutrition companion. Track meals, discover healthy recipes, and calculate health metrics with Calverse, powered by our extensive database.">
+    <meta property="og:title" content="Calverse - Advanced Fitness & Nutrition Companion">
+    <meta property="og:description" content="Achieve your fitness goals with smart tools for nutrition tracking and meal planning.">
     <meta property="og:image" content="https://placehold.co/1200x630/121212/FFD300?text=Calverse">
-    <meta property="og:url" content="#"> <!-- Replace with your actual URL -->
+    <meta property="og:url" content="#">
     <meta name="twitter:card" content="summary_large_image">
 
-    <!-- Favicon -->
+  
     <link rel="icon" href="https://placehold.co/32x32/FFD300/121212?text=C" type="image/x-icon">
 
-    <!-- Tailwind CSS -->
+ 
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Google Fonts: Poppins -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
-    <!-- Font Awesome for Icons -->
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-    <!-- Three.js for 3D background -->
+  
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 
     <style>
-        /* Custom Styles */
+      
         html { scroll-behavior: smooth; }
         body {
             font-family: 'Poppins', sans-serif;
             background-color: #121212;
             color: #F0F0F0;
-            overflow-x: hidden; /* Prevent horizontal scroll */
+            overflow-x: hidden;
         }
 
-        /* Custom scrollbar */
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #1E1E1E; }
         ::-webkit-scrollbar-thumb { background: #FFD300; border-radius: 10px; }
         ::-webkit-scrollbar-thumb:hover { background: #e6bf00; }
 
-        /* Hero section styling */
-        .hero-section { position: relative; height: 100vh; overflow: hidden; }
-        #three-canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; }
+
+        .hero-section { 
+            position: relative; 
+            height: 100vh; 
+            overflow: hidden; 
+            background-color: #121212;
+        }
+        #three-canvas { 
+            position: absolute; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%; 
+            z-index: 1; 
+        }
         .hero-content { position: relative; z-index: 2; }
         .cta-btn {
             background-image: linear-gradient(to right, #FCD635, #EFA90F);
@@ -57,15 +67,14 @@
             box-shadow: 0 0 25px rgba(255, 211, 0, 0.5);
         }
 
-        /* Enhanced Glassmorphism Effect */
+
         .glassmorphism {
             background: rgba(28, 28, 28, 0.75);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
             border: 1px solid rgba(255, 255, 255, 0.15);
         }
-        
-        /* Carousel Styling */
+
         .carousel-container { position: relative; }
         .carousel-track { display: flex; transition: transform 0.5s ease-in-out; }
         .carousel-slide { flex: 0 0 100%; padding: 0 1rem; }
@@ -80,11 +89,11 @@
             transform: scale(1.25);
         }
 
-        /* Phone Mockup */
+
         .phone-mockup {
             position: relative;
             width: 100%;
-            max-width: 270px; /* Slightly smaller for better fit on mobile */
+            max-width: 270px; 
             height: 540px;
             margin: auto;
             border: 12px solid #1E1E1E;
@@ -99,7 +108,7 @@
             object-fit: cover;
         }
 
-        /* Mockup Section Background */
+
         #mockups {
             position: relative;
             overflow: hidden;
@@ -111,7 +120,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background-image: url('https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=2070&auto=format&fit=crop');
+            background-image: url('aboutusimg.png');
             background-size: cover;
             background-position: center;
             opacity: 0.1; 
@@ -123,7 +132,7 @@
             z-index: 2;
         }
 
-        /* On-scroll fade-in animation */
+
         .fade-in-section {
             opacity: 0;
             transform: translateY(30px);
@@ -134,7 +143,7 @@
             transform: translateY(0);
         }
 
-        /* Back to top button */
+
         #back-to-top {
             position: fixed;
             bottom: 2rem;
@@ -150,12 +159,12 @@
             transform: translateY(0);
         }
         
-        /* Custom Popup Modal */
+      
         #popup-modal {
             transition: opacity 0.3s ease, visibility 0.3s ease;
         }
         
-        /* Mobile Menu Animation */
+       
         #mobile-menu {
             position: fixed;
             top: 0;
@@ -175,7 +184,7 @@
             transition: opacity 0.3s ease, visibility 0.3s ease;
         }
 
-        /* Beating Heart Animation */
+ 
         @keyframes beat {
             0%, 100% { transform: scale(1); }
             50% { transform: scale(1.3); }
@@ -186,7 +195,7 @@
             color: #ff4757;
         }
 
-        /* Gemini-like Text Animation */
+    
         @keyframes gemini-gradient {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
@@ -194,18 +203,19 @@
         }
         .gemini-text {
             background: linear-gradient(90deg, #4285F4, #9B72CB, #F4B400, #EA4335, #4285F4);
-            background-size: 200% 200%;
+            background-size: 400% 400%;
             background-clip: text;
             -webkit-background-clip: text;
             color: transparent;
-            animation: gemini-gradient 4s linear infinite;
+            animation: gemini-gradient 2.5s linear infinite;
             font-weight: 600;
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
         }
     </style>
 </head>
 <body class="antialiased">
 
-    <!-- Header -->
+
     <header class="fixed top-0 left-0 right-0 z-50 glassmorphism">
         <div class="container mx-auto px-4 sm:px-8 py-4 flex justify-between items-center">
             <a href="#" class="text-2xl font-bold text-white tracking-tight">
@@ -224,7 +234,7 @@
         </div>
     </header>
 
-    <!-- Mobile Menu -->
+
     <div id="menu-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-50 invisible opacity-0"></div>
     <div id="mobile-menu" class="bg-[#1E1E1E] p-6 z-[60]">
         <div class="flex justify-between items-center mb-8">
@@ -242,11 +252,11 @@
         </nav>
     </div>
 
-    <!-- Hero Section -->
+
     <section class="hero-section flex items-center justify-center text-center">
         <div id="three-canvas"></div>
         <div class="hero-content container mx-auto px-4 sm:px-8 pt-24 sm:pt-0">
-            <p class="text-yellow-400 font-medium text-xs uppercase tracking-widest mb-3">Powered by AI + Nutrition Science</p>
+            <p class="text-yellow-400 font-medium text-xs uppercase tracking-widest mb-3">Powered by Nutrition Science</p>
             <h1 class="text-4xl md:text-6xl font-extrabold text-white tracking-tight leading-tight mb-4">
                 Your Ultimate <span class="text-yellow-400">Fitness & Nutrition</span> Companion
             </h1>
@@ -257,16 +267,16 @@
                 <button id="apk-download-btn" class="cta-btn text-black font-bold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 flex items-center gap-2">
                     <i class="fab fa-android"></i> Download APK
                 </button>
-                <a href="#" class="border-2 border-yellow-400 text-white font-bold py-3 px-8 rounded-full hover:bg-yellow-400 hover:text-black transition-all duration-300 transform hover:scale-105 flex items-center gap-2">
+                <a href="https://calverse.netlify.app/#food" class="border-2 border-yellow-400 text-white font-bold py-3 px-8 rounded-full hover:bg-yellow-400 hover:text-black transition-all duration-300 transform hover:scale-105 flex items-center gap-2">
                     <i class="fas fa-globe"></i> Go to Web App
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Main Content Wrapper -->
+    
     <div class="bg-[#1a1a1a]">
-        <!-- Features Section -->
+    
         <section id="features" class="py-20 fade-in-section">
             <div class="container mx-auto px-4 sm:px-8">
                 <div class="text-center mb-12">
@@ -274,7 +284,7 @@
                     <p class="text-gray-400 mt-2">Everything you need to take control of your health.</p>
                 </div>
                 <div class="flex flex-wrap justify-center gap-8">
-                    <!-- Feature Cards -->
+        
                     <div class="glassmorphism p-6 rounded-xl text-center transform hover:-translate-y-2 transition-transform duration-300 flex flex-col items-center w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5">
                         <div class="text-4xl text-yellow-400 mb-4"><i class="fas fa-utensils"></i></div>
                         <h3 class="text-xl font-bold text-white mb-2 tracking-tight">Nutrition Lookup</h3>
@@ -304,23 +314,23 @@
             </div>
         </section>
 
-        <!-- About Us Section -->
+ 
         <section id="about" class="py-20 bg-[#121212] fade-in-section">
             <div class="container mx-auto px-4 sm:px-8">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                     <div class="text-center md:text-left">
                         <h2 class="text-3xl md:text-4xl font-bold text-white tracking-tight mb-4">Our Mission: Your Health, Simplified.</h2>
-                        <p class="text-gray-300 mb-4">At Calverse, we're demystifying health and fitness. Our goal is to make wellness accessible and intuitive for everyone, everywhere. We've built a powerful, AI-driven platform that puts you in control, transforming complex data into simple, actionable insights.</p>
+                        <p class="text-gray-300 mb-4">At Calverse, we're demystifying health and fitness. Our goal is to make wellness accessible and intuitive for everyone, everywhere. We've built a powerful, smart platform that puts you in control, transforming complex data into simple, actionable insights.</p>
                         <p class="text-gray-300">We are a passionate team of developers, nutritionists, and fitness enthusiasts committed to building a tool that not only tracks your progress but also educates and inspires you on your journey to a better you.</p>
                     </div>
                     <div>
-                        <img src="https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?q=80&w=1974&auto=format&fit=crop" alt="Calverse Team" class="rounded-xl shadow-lg">
+                        <video src="https://videos.pexels.com/video-files/3209828/3209828-hd_1920_1080_25fps.mp4" autoplay loop muted playsinline class="rounded-xl shadow-lg w-full h-full object-cover"></video>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Mockups Carousel Section -->
+     
         <section id="mockups" class="py-20 bg-[#1a1a1a] fade-in-section">
             <div class="container mx-auto px-4 sm:px-8">
                 <div class="text-center mb-12">
@@ -330,24 +340,24 @@
                 <div class="carousel-container relative">
                     <div class="overflow-hidden">
                         <div class="carousel-track">
-                            <!-- Slides with Phone Mockups -->
-                            <div class="carousel-slide"><div class="phone-mockup"><img src="http://googleusercontent.com/file_content/1" alt="Calverse Home Screen"></div><p class="text-center text-sm text-gray-400 mt-4">Home Screen</p></div>
-                            <div class="carousel-slide"><div class="phone-mockup"><img src="http://googleusercontent.com/file_content/0" alt="Calverse Nutrition Details"></div><p class="text-center text-sm text-gray-400 mt-4">Nutrition Details</p></div>
-                            <div class="carousel-slide"><div class="phone-mockup"><img src="http://googleusercontent.com/file_content/2" alt="Calverse Meal Analysis"></div><p class="text-center text-sm text-gray-400 mt-4">Meal Analysis</p></div>
-                            <div class="carousel-slide"><div class="phone-mockup"><img src="http://googleusercontent.com/file_content/3" alt="Calverse Recipe Generator"></div><p class="text-center text-sm text-gray-400 mt-4">Recipe Generator</p></div>
-                            <div class="carousel-slide"><div class="phone-mockup"><img src="http://googleusercontent.com/file_content/4" alt="Calverse Health Calculators"></div><p class="text-center text-sm text-gray-400 mt-4">Health Calculators</p></div>
+                       
+                            <div class="carousel-slide"><div class="phone-mockup"><img src="home.jpg" alt="Calverse Home Screen"></div><p class="text-center text-sm text-gray-400 mt-4">Home Screen</p></div>
+                            <div class="carousel-slide"><div class="phone-mockup"><img src="label.jpg" alt="Calverse Nutrition Details"></div><p class="text-center text-sm text-gray-400 mt-4">Nutrition Details</p></div>
+                            <div class="carousel-slide"><div class="phone-mockup"><img src="analyze.jpg" alt="Calverse Meal Analysis"></div><p class="text-center text-sm text-gray-400 mt-4">Meal Analysis</p></div>
+                            <div class="carousel-slide"><div class="phone-mockup"><img src="recipe.jpg" alt="Calverse Recipe Generator"></div><p class="text-center text-sm text-gray-400 mt-4">Recipe Generator</p></div>
+                            <div class="carousel-slide"><div class="phone-mockup"><img src="prodile.jpg" alt="Calverse Health Calculators"></div><p class="text-center text-sm text-gray-400 mt-4">Health Calculators</p></div>
                         </div>
                     </div>
-                    <!-- Carousel Controls -->
+                    
                     <button id="prevBtn" class="absolute top-1/2 left-0 md:-left-4 transform -translate-y-1/2 bg-yellow-400 hover:bg-yellow-500 text-black w-10 h-10 rounded-full z-10 transition-all duration-300"><i class="fas fa-chevron-left"></i></button>
                     <button id="nextBtn" class="absolute top-1/2 right-0 md:-right-4 transform -translate-y-1/2 bg-yellow-400 hover:bg-yellow-500 text-black w-10 h-10 rounded-full z-10 transition-all duration-300"><i class="fas fa-chevron-right"></i></button>
                 </div>
-                <!-- Pagination Dots -->
+     
                 <div id="pagination-dots" class="flex justify-center gap-2 mt-8"></div>
             </div>
         </section>
 
-        <!-- Quote Section -->
+      
         <section class="py-20 bg-[#121212] fade-in-section">
             <div class="container mx-auto px-4 sm:px-8 text-center">
                  <i class="fas fa-quote-left text-5xl text-yellow-400/50"></i>
@@ -357,7 +367,7 @@
             </div>
         </section>
 
-        <!-- Testimonials Section -->
+
         <section id="testimonials" class="py-20 bg-[#1a1a1a] fade-in-section">
             <div class="container mx-auto px-4 sm:px-8">
                 <div class="text-center mb-12">
@@ -365,15 +375,14 @@
                     <p class="text-gray-400 mt-2">Here's what our users are saying about Calverse.</p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Testimonials -->
-                    <div class="bg-[#2a2a2a] p-6 rounded-lg"><div class="flex items-center mb-4"><img src="https://placehold.co/50x50/FFD300/121212?text=A" alt="User Avatar" class="rounded-full mr-4"><div><p class="font-bold text-white">Alex Johnson</p><div class="text-yellow-400"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div></div></div><p class="text-gray-300">"Calverse has completely changed how I approach my diet. The meal analysis is a game-changer!"</p></div>
+                
+                    <div class="bg-[#2a2a2a] p-6 rounded-lg"><div class="flex items-center mb-4"><img src="https://placehold.co/50x50/FFD300/121212?text=A" alt="User Avatar" class="rounded-full mr-4"><div><p class="font-bold text-white">Sumit Kumar</p><div class="text-yellow-400"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div></div></div><p class="text-gray-300">"Calverse has completely changed how I approach my diet. The meal analysis is a game-changer!"</p></div>
                     <div class="bg-[#2a2a2a] p-6 rounded-lg"><div class="flex items-center mb-4"><img src="https://placehold.co/50x50/FFD300/121212?text=S" alt="User Avatar" class="rounded-full mr-4"><div><p class="font-bold text-white">Samantha Lee</p><div class="text-yellow-400"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div></div></div><p class="text-gray-300">"Finally, an all-in-one app for fitness. The recipe generator is my favorite feature."</p></div>
-                    <div class="bg-[#2a2a2a] p-6 rounded-lg"><div class="flex items-center mb-4"><img src="https://placehold.co/50x50/FFD300/121212?text=M" alt="User Avatar" class="rounded-full mr-4"><div><p class="font-bold text-white">Mike Chen</p><div class="text-yellow-400"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div></div></div><p class="text-gray-300">"The UI is so clean and easy to use. Highly recommend to anyone serious about their health."</p></div>
+                    <div class="bg-[#2a2a2a] p-6 rounded-lg"><div class="flex items-center mb-4"><img src="https://placehold.co/50x50/FFD300/121212?text=M" alt="User Avatar" class="rounded-full mr-4"><div><p class="font-bold text-white">Sitara</p><div class="text-yellow-400"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div></div></div><p class="text-gray-300">"The UI is so clean and easy to use. Highly recommend to anyone serious about their health."</p></div>
                 </div>
             </div>
         </section>
 
-        <!-- Contact Section -->
         <section id="contact" class="py-20 bg-[#121212] fade-in-section">
             <div class="container mx-auto px-4 sm:px-8">
                 <div class="text-center mb-12">
@@ -411,10 +420,10 @@
         </section>
     </div>
 
-    <!-- Footer -->
+
     <footer class="bg-[#121212] pt-16 pb-8">
         <div class="container mx-auto px-4 sm:px-8 text-center text-gray-400">
-            <!-- Newsletter Signup -->
+     
             <div class="max-w-md mx-auto mb-12">
                 <h3 class="text-xl font-bold text-white mb-2 tracking-tight">Subscribe to Our Newsletter</h3>
                 <p class="text-sm text-gray-400 mb-4">Get the latest news, updates, and health tips from Calverse.</p>
@@ -427,35 +436,34 @@
                 </form>
                  <p class="text-xs text-gray-500 mt-2">No spam. Unsubscribe anytime.</p>
             </div>
-            <!-- Logo -->
+   
              <a href="#" class="inline-block text-3xl font-bold text-white tracking-tight mb-6">
                 <i class="fas fa-chart-line text-yellow-400"></i>
             </a>
-            <!-- Social Links -->
+         
             <div class="flex justify-center space-x-6 mb-6">
                 <a href="#" aria-label="Twitter" class="text-3xl hover:text-yellow-400 transition-transform duration-300 transform hover:scale-125"><i class="fab fa-twitter"></i></a>
                 <a href="#" aria-label="Instagram" class="text-3xl hover:text-yellow-400 transition-transform duration-300 transform hover:scale-125"><i class="fab fa-instagram"></i></a>
                 <a href="#" aria-label="Discord" class="text-3xl hover:text-yellow-400 transition-transform duration-300 transform hover:scale-125"><i class="fab fa-discord"></i></a>
             </div>
-            <!-- Legal Links -->
+
             <div class="space-x-4 mb-4 text-sm">
-                <a href="#" class="text-gray-400 hover:text-white transition duration-300">Privacy Policy</a>
+                <a href="termsan" class="text-gray-400 hover:text-white transition duration-300">Privacy Policy</a>
                 <span class="text-gray-600">|</span>
                 <a href="#" class="text-gray-400 hover:text-white transition duration-300">Terms of Service</a>
             </div>
             <p class="text-xs text-gray-500">&copy; 2025 Calverse. All Rights Reserved.</p>
             <p class="text-sm text-gray-500 mt-6">
-                Made with <span class="heart">❤</span> by <a href="https://www.instagram.com/ashutoshroy_/" target="_blank" rel="noopener noreferrer" class="gemini-text">Ashutosh Roy</a>
+                Made with <span class="heart">❤</span> by <a href="https://www.instagram.com/4zion69" target="_blank" rel="noopener noreferrer" class="gemini-text">Ashutosh Roy</a>
             </p>
         </div>
     </footer>
 
-    <!-- Back to Top Button -->
+
     <button id="back-to-top" class="bg-yellow-400 hover:bg-yellow-500 text-black w-12 h-12 rounded-full z-50 transition-all duration-300 flex items-center justify-center">
         <i class="fas fa-arrow-up"></i>
     </button>
 
-    <!-- APK Download Popup Modal -->
     <div id="popup-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-60 invisible opacity-0">
         <div class="bg-[#2a2a2a] rounded-lg shadow-xl p-6 w-11/12 max-w-sm text-center transform scale-95 transition-transform duration-300">
             <h3 class="text-lg font-bold text-white mb-2">A Quick Note</h3>
@@ -464,7 +472,7 @@
         </div>
     </div>
 
-    <!-- External JS File -->
+
     <script src="script.js" defer></script>
 </body>
 </html>
